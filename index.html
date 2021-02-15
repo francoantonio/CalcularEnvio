@@ -13,28 +13,17 @@
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Servicio de envio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-
-                    <a class="nav-link" href="#">Calcular un monto </a>
-                    <a class="nav-link" href="#">Ver tabla</a>
-
-                </div>
-            </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid mx-5">
+            <h1 class="text-light">Servicio de envio</h1>
+        </div>
         </div>
     </nav>
 </header>
 <main>
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-9 col-md-4">
                 <h2 class="mt-4">Calcular envio</h2>
                 <form id="forumulario">
                     <div class="from-group">
@@ -42,38 +31,33 @@
                         <div class="input-group mb-3 col-3">
                             <span class="input-group-text" id="basic-addon1">$</span>
                             <input type="number" class="form-control" placeholder="" id="principal"
-                                aria-label="Username" min="0.0" max="20000000" step="any" required>
+                                aria-label="Username" min="0.0" max="20000000" step="any">
                         </div>
                         <label for="basic-url" class="form-label">Cargo del envio %5</label>
                         <div class="input-group mb-3 col-3">
                             <span class="input-group-text" id="basic-addon1">$</span>
-                            <input type="text" class="form-control" placeholder="" id="cargos" aria-label="Username"
-                                disabled min="0.0" max="20000000" step="any">
+                            <input type="numer" class="form-control" placeholder="" id="cargos" aria-label="Username"
+                                disabled min="0.0" step="any">
                         </div>
                         <label for="basic-url" class="form-label">Impuesto Iva %21 del cargo del envio</label>
                         <div class="input-group mb-3 col-3">
-
                             <span class="input-group-text" id="basic-addon1">$</span>
-                            <input type="text" class="form-control" placeholder="" id="impuesto" aria-label="Username"
-                                disabled min="0.0" max="20000000" step="any">
+                            <input type="number" class="form-control" placeholder="" id="impuesto" aria-label="Username"
+                                disabled min="0.0" step="any">
                         </div>
                         <label for="basic-url" class="form-label">Total a pagar</label>
                         <div class="input-group mb-3 col-3">
-
                             <span class="input-group-text" id="basic-addon1">$</span>
                             <input type="number" class="form-control" placeholder="" id="total" aria-label="Username"
-                                min="0.0" max="20000000" step="any">
+                                min="0.0" step="any " disabled>
                         </div>
-                        <!--                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button class="btn btn-danger btn-lg" type="reset" id="reset">Borrar</button>
-                            <button class="btn btn-success btn-lg" type="submit" id="calcular">Calcular</button>
-                        </div> -->
+
                     </div>
                 </form>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <h2 class="mt-4">Ver tabla</h2>
-                <form action="">
+                <form action="" id="Vertabla">
                     <div class="from-group">
                         <label for="basic-url" class="form-label">Cuanto resultados quieres ver</label>
                         <div class="input-group mb-3 col-3">
@@ -82,13 +66,41 @@
                                 <option value="10">10</option>
                                 <option value="20">20</option>
                                 <option value="30">30</option>
-                                <option value="40">40</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
                             </select>
-                            <button class="btn btn-success btn-lg">mostrar</button>
+                            <button class="btn btn-success btn-lg" id="VerTabla">mostrar</button>
                         </div>
                 </form>
+                <div id="showTables">
+                    <!-- Tablas -->
+                    <!-- <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Envia</th>
+                                <th scope="col">Cargos</th>
+                                <th scope="col">Impuesto</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td>example</td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
             </div>
         </div>
     </div>
@@ -106,8 +118,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
         integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
         crossorigin="anonymous"></script>
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Numeral.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <!-- script custom -->
     <script src="/assets/js/app.js"></script>i
 </body>
