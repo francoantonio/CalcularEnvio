@@ -47,7 +47,7 @@ const generateTable = (valor) => {
   let padre = document.querySelector('#showTables');
 
   padre.innerHTML = '';
-  console.log(`vamos a mostrar una tabla con ${valor}`);
+  /*   console.log(`vamos a mostrar una tabla con ${valor}`); */
   tabla = document.createElement('table');
   tabla.classList.add('table', 'generateTable');
   tabla.innerHTML = `
@@ -67,11 +67,26 @@ const generateTable = (valor) => {
   for (let i = 0; i < valor; i++) {
     valoresArray.push(valoresRandom());
   }
+
   valoresArray.sort(function (a, b) {
     return a - b;
   });
   let tablaPadre = document.querySelector('#childertable');
-  for (const valora of valoresArray) {
+  valoresArray.forEach((valor) => {
+    let elemento = document.createElement('tr');
+    let lista = [valor];
+    lista.push(generateValor(valor));
+    elemento.innerHTML = `
+
+    <td>$ ${lista[0]}</td>
+    <td>$ ${lista[1][0]}</td>
+    <td>$ ${lista[1][1]}</td>
+    <td>$ ${lista[1][2]}</td>
+    `;
+    tablaPadre.appendChild(elemento);
+  });
+
+  /* for (const valora of valoresArray) {
     let elemento = document.createElement('tr');
     elemento.innerHTML = `
     <td>$ ${valora[0]}</td>
@@ -80,10 +95,23 @@ const generateTable = (valor) => {
     <td>$ ${valora[3]}</td>
     `;
     tablaPadre.appendChild(elemento);
-  }
+  } */
 };
+const generateValor = (valor) => {
+  let cargos = sacarPorciento(valor, 5);
 
+  let impuesto = sacarPorciento(cargos, 21);
+
+  let total = (parseFloat(valor) + parseFloat(cargos) + parseFloat(impuesto)).toFixed(2);
+
+  return [cargos, impuesto, total];
+};
 const valoresRandom = () => {
+  max = 60000;
+  min = 100;
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+/* const valoresRandom = () => {
   max = 60000;
   min = 100;
   let principal = Math.floor(Math.random() * (max - min)) + min;
@@ -95,4 +123,4 @@ const valoresRandom = () => {
   let total = (parseFloat(principal) + parseFloat(cargos) + parseFloat(impuesto)).toFixed(2);
 
   return [principal, cargos, impuesto, total];
-};
+}; */
