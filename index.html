@@ -38,31 +38,42 @@
             </div>
             <div class="row">
                 <div class="col-9 col-md-4 mb-4">
-                    <h2 class="mt-4">Calcular envio</h2>
+                    <h2 class="mt-4" for="">Calcular envio</h2>
                     <form id="forumulario">
                         <div class="from-group">
+                            <!-- <div class="my-2">
+                                <p for="basic-url" class="form-label">¿Que tipo de envio es?</p>
+                                <div class=id="typeEnvio">
+                                    <label for="">Nacional <strong>PF</strong></label>
+                                    <input type="radio" value="Nacional" name="check" id=""><br>
+                                    <label for="">Internacional <strong>Wupos</strong> <br></label>
+                                    <input type="radio" value="Internacional" name="check" id="">
+
+                                </div>
+                            </div> -->
+
                             <label for="basic-url" class="form-label">Monto a enviar</label>
                             <div class="input-group mb-3 col-3">
                                 <span class="input-group-text" id="basic-addon1">$</span>
-                                <input type="number" class="form-control" placeholder="" id="principal" min="0.0"
-                                    max="20000000" step="any">
+                                <input type="number" class="form-control text-end" placeholder="" id="principal"
+                                    min="0.0" max="20000000" maxlength="10" step="any" step>
                             </div>
                             <label for="basic-" class="form-label">Cargo del envio %5</label>
                             <div class="input-group mb-3 col-3">
-                                <span class="input-group-text" id="basic-addon1">$</span>
-                                <input type="number" class="form-control" placeholder="" id="cargos" disabled min="0.0"
-                                    step="any">
+                                <span class="input-group-text " id="basic-addon1">$</span>
+                                <input type="number" class="form-control text-end"" placeholder="" id=" cargos" disabled
+                                    min="0.0" step="any">
                             </div>
                             <label for="basic-url" class="form-label">Impuesto Iva %21</label>
                             <div class="input-group mb-3 col-3">
                                 <span class="input-group-text" id="basic-addon1">$</span>
-                                <input type="number" class="form-control" placeholder="" id="impuesto" disabled
-                                    min="0.0" step="any">
+                                <input type="number" class="form-control text-end"" placeholder="" id=" impuesto"
+                                    disabled min="0.0" step="any">
                             </div>
                             <label for="basic-url" class="form-label">Total a pagar</label>
                             <div class="input-group mb-3 col-3">
                                 <span class="input-group-text" id="basic-addon1">$</span>
-                                <input type="number" class="form-control" placeholder="" id="total" min="0.0"
+                                <input type="number" class="form-control text-end"" placeholder="" id=" total" min="0.0"
                                     step="any " disabled>
                             </div>
 

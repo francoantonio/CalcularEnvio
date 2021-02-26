@@ -1,17 +1,17 @@
 let principal = document.querySelector('#principal');
-principal.addEventListener('keyup', (event) => {
+principal.addEventListener('input', (event) => {
   var cargos = document.querySelector('#cargos');
   var impuesto = document.querySelector('#impuesto');
   var total = document.querySelector('#total');
 
-  if (principal.value !== '' && principal !== NaN) {
+  if (principal.value !== '' && principal.value !== NaN && principal.value != 0) {
     cargos.value = sacarPorciento(principal.value, 5);
 
     impuesto.value = sacarPorciento(cargos.value, 21);
     total.value = parseFloat(sumaTotal(impuesto, cargos, principal)).toFixed(2);
-    total = total.value.toLocaleString('es-AR', {
-      currency: 'ARS',
-    });
+    // total = total.value.toLocaleString('es-AR', {
+    //   currency: 'ARS',
+    // });
   }
   //Limpia los otros campos si el valor de principal es "" o 0
   if (principal.value == '' || principal.value == 0) {
@@ -111,16 +111,3 @@ const valoresRandom = () => {
   min = 100;
   return Math.floor(Math.random() * (max - min)) + min;
 };
-/* const valoresRandom = () => {
-  max = 60000;
-  min = 100;
-  let principal = Math.floor(Math.random() * (max - min)) + min;
-
-  let cargos = sacarPorciento(principal, 5);
-
-  let impuesto = sacarPorciento(cargos, 21);
-
-  let total = (parseFloat(principal) + parseFloat(cargos) + parseFloat(impuesto)).toFixed(2);
-
-  return [principal, cargos, impuesto, total];
-}; */
